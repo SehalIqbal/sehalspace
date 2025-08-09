@@ -1,6 +1,6 @@
-import React from "react";
-import { ContactFrom } from "../components";
-import { ContactInfo } from "../components/widgets/contactInfo";
+// import React from "react";
+// import { ContactFrom } from "../components";
+// import { ContactInfo } from "../components/widgets/contactInfo";
 import { BasicLayout } from "../layouts/basicLayout";
 
 const Contactme = () => {

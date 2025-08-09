@@ -8,7 +8,7 @@ import {
 } from "../components";
 import { Ibutton, SkillsBox,ExperiencesBox } from "../components";
 import { BasicLayout } from "../layouts/basicLayout";
-import myPhoto from "../assets/me.png";
+import myPhoto from "../assets/me.jpeg";
 
 const Skills = () => {
   return (
