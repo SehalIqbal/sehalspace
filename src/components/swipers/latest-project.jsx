@@ -11,7 +11,7 @@ import "./style.css";
 import { BsArrowRight, BsArrowLeft } from "react-icons/bs";
 
 // import required modules
-import { Autoplay, Pagination, Navigation } from "swiper";
+import { Autoplay, Navigation } from "swiper/modules";
 
 const LatestProjectsSwiper = () => {
   const [swiperRef, setSwiperRef] = useState(null);
@@ -34,37 +34,38 @@ const LatestProjectsSwiper = () => {
         </header>
 
         <Swiper
-          onSwiper={setSwiperRef}
-          slidesPerView={1}
-          centeredSlides={false}
-          spaceBetween={15}
-          navigation={{
-            nextEl: ".next_s",
-            prevEl: ".prev_s",
-          }}
-          autoplay={{
-            delay: 2500,
-            disableOnInteraction: false,
-          }}
-          breakpoints={{
-            640: {
-              slidesPerView: 2,
-              spaceBetween: 30,
-            },
-            1024: {
-              slidesPerView: 3,
-              spaceBetween: 30,
-            },
-            1240: {
-              slidesPerView: 4,
-              spaceBetween: 30,
-              preventClicks: false,
-              preventClicksPropagation: false,
-            },
-          }}
-          modules={[Navigation]}
-          className="swiper-container"
-        >
+  onSwiper={setSwiperRef}
+  slidesPerView={1}
+  centeredSlides={false}
+  spaceBetween={15}
+  navigation={{
+    nextEl: ".next_s",
+    prevEl: ".prev_s",
+  }}
+  autoplay={{
+    delay: 2500,
+    disableOnInteraction: false,
+  }}
+  breakpoints={{
+    640: {
+      slidesPerView: 2,
+      spaceBetween: 30,
+    },
+    1024: {
+      slidesPerView: 3,
+      spaceBetween: 30,
+    },
+    1240: {
+      slidesPerView: 4,
+      spaceBetween: 30,
+      preventClicks: false,
+      preventClicksPropagation: false,
+    },
+  }}
+  modules={[Autoplay, Navigation]} // ← add Autoplay here
+  className="swiper-container"
+>
+
           <SwiperSlide>
             <div className="card bg-transparent border-0 cardwithshadow minh100 onhoverup">
               <a
