@@ -29,7 +29,7 @@ import {Footer} from "./sections/footer";
 
 
 //Widgets
-import {ContactFrom} from "./Widgets/contactForm";
+import {ContactForm} from "./Widgets/contactForm";
 import {SkillsBox } from "./widgets/skillsBox";
 import {ExperiencesBox } from "./widgets/experiencesBox";
 
@@ -58,7 +58,7 @@ export {
     LatestBlogPosts,
     Testimonial,
     Footer,
-    ContactFrom,
+    ContactForm,
     Post,
     FullWidthImage,
     SkillsBox ,ExperiencesBox
