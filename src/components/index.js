@@ -29,7 +29,7 @@ import {Footer} from "./sections/footer";
 
 
 //Widgets
-import {ContactForm} from "./Widgets/contactForm";
+import {ContactForm} from "./widgets/contactForm";
 import {SkillsBox } from "./widgets/skillsBox";
 import {ExperiencesBox } from "./widgets/experiencesBox";
 
