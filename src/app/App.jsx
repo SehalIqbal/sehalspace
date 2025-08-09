@@ -26,7 +26,7 @@ const App = () => {
     <BrowserRouter>
       <ScrollToTop />
       <div className="rs-content">
-        <HeaderTop logotext="UBAI MUTL" />
+        <HeaderTop logotext="SEHAL IQBAL" />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/elements" element={<Elements />} />

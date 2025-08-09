@@ -15,7 +15,7 @@ export const Footer = () => {
       <div className="col-11">
         <div className="row  pb-5">
           <div className="col-xl-8 col-md-4 col-sm-4 col-12">
-            <h3 className="text-muted mb-md-0 mb-5 bold-text">UBAI MUTL</h3>
+            <h3 className="text-muted mb-md-0 mb-5 bold-text">Sehal Iqbal</h3>
           </div>
           <div className="col-xl-2 col-md-4 col-sm-4 col-12">
             <h6 className="mb-3 mb-lg-4 bold-text ">
@@ -38,7 +38,7 @@ export const Footer = () => {
         </div>
         <div className="row pt-4">
           <div className="col-xl-8 col-md-4 col-sm-4 col-auto  my-md-0 mt-5 order-sm-1 order-3 align-self-end">
-          <h2><a className="text-light" href="mailto:contact@ubai.me">contact@ubai.me</a></h2>
+          <h2><a className="text-light" href="mailto:sehaliqbal@gmail.com">sehaliqbal@gmail.com</a></h2>
           </div>
           <div className="col-xl-2 col-md-4 col-sm-4 col-auto order-1 align-self-end ">
     
@@ -48,7 +48,7 @@ export const Footer = () => {
           </div>
           <div className="col-xl-2 col-md-4 col-sm-4 col-auto order-2 align-self-end mt-3   ">
             <small>
-             Made By UbaiMutl
+             Made By SehalIqbal
             </small>
           </div>
         </div>

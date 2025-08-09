@@ -1,3 +1,3 @@
-const USER_NAME = 'ubaimutl';
+const USER_NAME = 'SehalIqbal';
 
 export {USER_NAME}

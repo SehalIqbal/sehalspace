@@ -81,7 +81,7 @@ export const ShareMobile = () => {
       <div className="col-6 fs-5">
       <span>by</span>
         <span className="ms-1">
-          Ubai Mutl
+          Sehal Iqbal
         </span>
       </div>
     <div className="d-flex">

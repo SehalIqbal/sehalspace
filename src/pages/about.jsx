@@ -8,6 +8,7 @@ import {
 } from "../components";
 import { Ibutton, SkillsBox,ExperiencesBox } from "../components";
 import { BasicLayout } from "../layouts/basicLayout";
+import myPhoto from "../assets/me.png";
 
 const Skills = () => {
   return (
@@ -36,8 +37,8 @@ const Skills = () => {
                 <div>
                   <img
                     className="position-absolute top-0 start-0 w-100 h-100 object-fit-cover"
-                    src="https://images.unsplash.com/photo-1501078319173-5d5298f2faf8"
-                    alt="Ubai Multl"
+                    src={myPhoto}
+                    alt="Sehal Iqbal"
                   />
                 </div>
               </div>

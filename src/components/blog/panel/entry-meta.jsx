@@ -15,7 +15,7 @@ export const EntryMeta = () => {
       <List className="d-flex">
         <span>by</span>
         <span className="ms-1">
-          Ubai Mutl
+          Sehal Iqbal
         </span>
       </List>
       <List className="d-flex">September 17, 2021</List>

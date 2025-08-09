@@ -20,7 +20,7 @@ const Contactme = () => {
             </div>
           </div>
           <p className="text-secondary fw-normal text-uppercase">Got a question?</p>
-          <h5 className="mb-3 fw-light h2">contact@ubai.me</h5>
+          <h5 className="mb-3 fw-light h2">sehaliqbal@gmail.com</h5>
         </div>
       </div>
     </BasicLayout>
