@@ -22,7 +22,7 @@ const Input = styled.input`
   background: transparent;
   border-radius: 0;
 `;
-export const ContactFrom = () => {
+export const ContactForm = () => {
   return (
     <Form>
       <h6 className="h6">Get in touch</h6>
