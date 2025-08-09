@@ -1,5 +1,5 @@
 import React from "react";
-import { ContactFrom } from "../components";
+import { ContactForm } from "../components";
 import { ContactInfo } from "../components/widgets/contactInfo";
 import { BasicLayout } from "../layouts/basicLayout";
 
@@ -13,7 +13,7 @@ const Contact = () => {
               <ContactInfo />
             </div>
             <div className="col-lg-6">
-              <ContactFrom />
+              <ContactForm/>
             </div>
           </div>
         </div>
