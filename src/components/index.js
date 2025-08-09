@@ -24,18 +24,10 @@ import { Testimonial } from "./sections/testimonial";
 import {ProjectsSection} from "./sections/projects";
 import {Footer} from "./sections/footer";
 
-
-
-
-
 //Widgets
 import {ContactForm} from "./widgets/contactForm";
 import {SkillsBox } from "./widgets/skillsBox";
 import {ExperiencesBox } from "./widgets/experiencesBox";
-
-
-
-
 
 //blog
 import {Post} from "./blog/post";
