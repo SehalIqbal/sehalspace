@@ -45,7 +45,7 @@ export const IntroSection = () => {
            <Introh1>
   Hi, I’m <span style={{ color: "#16a34a" }}>Sehal Iqbal</span> 👋 <br />
   With a foundation in <span style={{ color: "#16a34a" }}>{word}</span>, I understand how to work with data and intelligent systems. <br />
-  I now specialize in <span style={{ color: "#16a34a" }}>automation workflows</span> using n8n to help businesses save time and work smarter.
+  I now specialize in <span style={{ color: "#16a34a" }}>automation workflows</span> with Python  and n8n to help businesses save time and operate more efficiently.
 </Introh1>
 
 
