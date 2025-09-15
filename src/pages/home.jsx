@@ -3,7 +3,6 @@ import LatestProjectsSwiper from "../components/swipers/latest-project";
 import {
   IntroSection,
   Testimonial,
-  LatestBlogPosts,
   Footer,
 } from "../components";
 import { BasicLayout } from "../layouts/basicLayout";
@@ -14,7 +13,6 @@ const Home = () => {
       <IntroSection />
       <LatestProjectsSwiper />
       <Testimonial />
-      <LatestBlogPosts />
     </BasicLayout>
   );
 };

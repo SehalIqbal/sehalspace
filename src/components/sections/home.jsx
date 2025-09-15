@@ -1,8 +1,7 @@
 import React from "react";
 import LatestProjectsSwiper from "../swipers/latest-project";
 import { CallToAction } from "../elements/callToAction";
-import {Counter} from "../elements/counter";
-import  ControlledCarousel from "./testimonial";
+import { Counter } from "../elements/counter";
 
 const Home = () => {
   return (
@@ -18,7 +17,9 @@ const Home = () => {
           </div>
         </div>
       </div>
+
       <LatestProjectsSwiper />
+
       <div className="container">
         <div className="row min-vh-100 align-items-center">
           <div className="col-lg-6 pe-xl-5 py-5">
@@ -48,6 +49,7 @@ const Home = () => {
               </div>
             </div>
           </div>
+
           <div className="col-lg-6">
             <div className="home-image">
               <img src="" title="" alt="" />
@@ -55,10 +57,11 @@ const Home = () => {
           </div>
         </div>
       </div>
+
       <div className="container">
         <CallToAction />
-        <Counter number='342' title="tatd sadfasd asdf" />
-        <Counter number='342' title="tatd sadfasd asdf" />
+        <Counter number="342" title="tatd sadfasd asdf" />
+        <Counter number="342" title="tatd sadfasd asdf" />
       </div>
     </section>
   );

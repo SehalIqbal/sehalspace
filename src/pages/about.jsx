@@ -6,7 +6,7 @@ import {
   CircularProgress,
   PricingTable,
 } from "../components";
-import { Ibutton, SkillsBox,ExperiencesBox } from "../components";
+import { Ibutton, SkillsBox, ExperiencesBox } from "../components";
 import { BasicLayout } from "../layouts/basicLayout";
 import myPhoto from "../assets/me.jpeg";
 
@@ -25,7 +25,7 @@ const Skills = () => {
               </p>
             </div>
             <SkillsBox />
-<ExperiencesBox />
+            <ExperiencesBox />
           </div>
 
           <div className="col-lg-6 col-xl-5 mx-auto pt-5 pt-lg-0 mb-5 pb-5">

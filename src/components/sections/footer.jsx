@@ -24,7 +24,6 @@ export const Footer = () => {
             <ul className="list-unstyled bold-text">
               <li className="mb-2"><b>Home</b></li>
               <li className="mb-2"><b>About</b></li>
-              <li className="mb-2"><b>Blog</b></li>
               <li className="mb-2"><b>Portfolio</b></li>
             </ul>
           </div>

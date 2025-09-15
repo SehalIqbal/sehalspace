@@ -33,9 +33,6 @@ export const TopMenu = () => {
             <NavLink to="/">Home</NavLink>
           </ListItem>
           <ListItem>
-            <NavLink to="blog">Blog</NavLink>
-          </ListItem>
-          <ListItem>
             <NavLink to="about">About</NavLink>
           </ListItem>
           <ListItem>

@@ -114,7 +114,7 @@ export const CenterdMenu = ({ isActive, set }) => (
       <Content>
         <MenuListWrapper>
           <MenuList>
-            {["Home", "Portfolio", "About", "Contact", "Blog", "Elements"].map((item) => (
+            {["Home", "Portfolio", "About", "Contact", "Elements"].map((item) => (
               <MenuItem key={item}>
                 <MenuLink to={`/${item.toLowerCase()}`} onClick={set}>
                   {item}
