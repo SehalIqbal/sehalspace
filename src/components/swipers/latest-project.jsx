@@ -1,71 +1,70 @@
-import React, { useRef, useState } from "react";
-// Import Swiper React components
+import React, { useState } from "react";
+// Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
-// Import Swiper styles
+// Swiper styles
 import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
+import "swiper/css/pagination"; // (kept in case you add pagination later)
 import "./style.css";
 
-import { BsArrowRight, BsArrowLeft } from "react-icons/bs";
+// Removed arrow icons & Navigation module
+// import { BsArrowRight, BsArrowLeft } from "react-icons/bs";
 
-// import required modules
-import { Autoplay, Navigation } from "swiper/modules";
+// Modules
+import { Autoplay } from "swiper/modules";
 
 const LatestProjectsSwiper = () => {
   const [swiperRef, setSwiperRef] = useState(null);
 
+  // No extra wheel handler needed; we'll disable swiping over images so the page scrolls.
+
   return (
-    <div style={{ marginBottom: "30%" }}>
+    <div style={{ marginBottom: "200px" }}>
       <div className="container-fluid homefu fu-slider">
-        <div className="py-4 text-end">
-          <h3 className="fs-4 mb-2">Latest Work</h3>
+        {/* Title aligned LEFT (was text-end) */}
+        <div className="py-4 text-start">
+          <h3 className="fs-4 mb-2">My Projects</h3>
         </div>
-        <header className="sli3-underline-header d-flex justify-content-between my-3">
-          <div className="sli3-underline-header__arrows">
-            <div className="recent-stories__arrow recent-stories__arrow--prev pr prev_s">
-              <BsArrowLeft  />
-            </div>
-            <div className="recent-stories__arrow recent-stories__arrow--next ne next_s">
-              <BsArrowRight />
-            </div>
-          </div>
-        </header>
+
+        {/* Removed header with custom arrows */}
 
         <Swiper
-  onSwiper={setSwiperRef}
-  slidesPerView={1}
-  centeredSlides={false}
-  spaceBetween={15}
-  navigation={{
-    nextEl: ".next_s",
-    prevEl: ".prev_s",
-  }}
-  autoplay={{
-    delay: 2500,
-    disableOnInteraction: false,
-  }}
-  breakpoints={{
-    640: {
-      slidesPerView: 2,
-      spaceBetween: 30,
-    },
-    1024: {
-      slidesPerView: 3,
-      spaceBetween: 30,
-    },
-    1240: {
-      slidesPerView: 4,
-      spaceBetween: 30,
-      preventClicks: false,
-      preventClicksPropagation: false,
-    },
-  }}
-  modules={[Autoplay, Navigation]} // ← add Autoplay here
-  className="swiper-container"
->
-
+          onSwiper={setSwiperRef}
+          
+          
+          slidesPerView={1}
+          centeredSlides={false}
+          spaceBetween={15}
+          // Removed navigation and arrow elements
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
+          // Enable mouse interactions (drag with mouse). Wheel will scroll the page now.
+          grabCursor={true}
+          breakpoints={{
+            640: {
+              slidesPerView: 2,
+              spaceBetween: 30,
+            },
+            1024: {
+              slidesPerView: 3,
+              spaceBetween: 30,
+            },
+            1240: {
+              slidesPerView: 4,
+              spaceBetween: 30,
+            },
+          }}
+          modules={[Autoplay]}
+          className="swiper-container"
+          // Fix: let page scroll even when cursor is over slider
+          nested={true}
+          touchReleaseOnEdges={true}
+          touchStartPreventDefault={false}
+          touchMoveStopPropagation={false}
+          passiveListeners={true}
+        >
           <SwiperSlide>
             <div className="card bg-transparent border-0 cardwithshadow minh100 onhoverup">
               <a
@@ -77,6 +76,8 @@ const LatestProjectsSwiper = () => {
                   <img
                     className="position-absolute top-0 start-0 w-100 h-100 object-fit-cover"
                     src="https://images.unsplash.com/photo-1662003496587-8b41cf5818e2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
+                    alt="Project #1 preview"
+                    loading="lazy"
                   />
                 </div>
               </a>
@@ -86,7 +87,8 @@ const LatestProjectsSwiper = () => {
                 </h3>
               </div>
             </div>
-          </SwiperSlide>{" "}
+          </SwiperSlide>
+
           <SwiperSlide>
             <div className="card bg-transparent border-0 cardwithshadow minh100 onhoverup">
               <a
@@ -98,16 +100,19 @@ const LatestProjectsSwiper = () => {
                   <img
                     className="position-absolute top-0 start-0 w-100 h-100 object-fit-cover"
                     src="https://images.unsplash.com/photo-1516247524857-8dc5f4786cb3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+                    alt="Project #2 preview"
+                    loading="lazy"
                   />
                 </div>
               </a>
               <div className="card-body">
                 <h3 className="card-title">
-                  <a href="#">Project #1</a>
+                  <a href="#">Project #2</a>
                 </h3>
               </div>
             </div>
-          </SwiperSlide>{" "}
+          </SwiperSlide>
+
           <SwiperSlide>
             <div className="card bg-transparent border-0 cardwithshadow minh100 onhoverup">
               <a
@@ -119,16 +124,19 @@ const LatestProjectsSwiper = () => {
                   <img
                     className="position-absolute top-0 start-0 w-100 h-100 object-fit-cover"
                     src="https://images.unsplash.com/photo-1588829608085-3a321dd3239f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
+                    alt="Project #3 preview"
+                    loading="lazy"
                   />
                 </div>
               </a>
               <div className="card-body">
                 <h3 className="card-title">
-                  <a href="#">Project #1</a>
+                  <a href="#">Project #3</a>
                 </h3>
               </div>
             </div>
-          </SwiperSlide>{" "}
+          </SwiperSlide>
+
           <SwiperSlide>
             <div className="card bg-transparent border-0 cardwithshadow minh100 onhoverup">
               <a
@@ -140,80 +148,20 @@ const LatestProjectsSwiper = () => {
                   <img
                     className="position-absolute top-0 start-0 w-100 h-100 object-fit-cover"
                     src="https://images.unsplash.com/photo-1504587614488-3259c5c1d9b7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
+                    alt="Project #4 preview"
+                    loading="lazy"
                   />
                 </div>
               </a>
               <div className="card-body">
                 <h3 className="card-title">
-                  <a href="#">Project #1</a>
+                  <a href="#">Project #4</a>
                 </h3>
               </div>
             </div>
-          </SwiperSlide>{" "}
-          <SwiperSlide>
-            <div className="card bg-transparent border-0 cardwithshadow minh100 onhoverup">
-              <a
-                className="card-preview overflow-hidden position-relative w-100"
-                style={{ paddingBottom: "calc( 1.35 * 100% )" }}
-                href="#"
-              >
-                <div>
-                  <img
-                    className="position-absolute top-0 start-0 w-100 h-100 object-fit-cover"
-                    src="https://images.unsplash.com/photo-1527239441953-caffd968d952?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
-                  />
-                </div>
-              </a>
-              <div className="card-body">
-                <h3 className="card-title">
-                  <a href="#">Project #1</a>
-                </h3>
-              </div>
-            </div>
-          </SwiperSlide>{" "}
-          <SwiperSlide>
-            <div className="card bg-transparent border-0 cardwithshadow minh100 onhoverup">
-              <a
-                className="card-preview overflow-hidden position-relative w-100"
-                style={{ paddingBottom: "calc( 1.35 * 100% )" }}
-                href="#"
-              >
-                <div>
-                  <img
-                    className="position-absolute top-0 start-0 w-100 h-100 object-fit-cover"
-                    src="https://images.unsplash.com/photo-1523634540939-0be5fba32c8f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=772&q=80"
-                  />
-                </div>
-              </a>
-              <div className="card-body">
-                <h3 className="card-title">
-                  <a href="#">Project #1</a>
-                </h3>
-              </div>
-            </div>
-          </SwiperSlide>{" "}
-          <SwiperSlide>
-            <div className="card bg-transparent border-0 cardwithshadow minh100 onhoverup">
-              <a
-                className="card-preview overflow-hidden position-relative w-100"
-                style={{ paddingBottom: "calc( 1.35 * 100% )" }}
-                href="#"
-              >
-                <div>
-                  <img
-                    className="position-absolute top-0 start-0 w-100 h-100 object-fit-cover"
-                    src="https://images.unsplash.com/photo-1597160449583-5c76ed653055?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=810&q=80"
-                  />
-                </div>
-              </a>
-              <div className="card-body">
-                <h3 className="card-title">
-                  <a href="#">Project #1</a>
-                </h3>
-              </div>
-            </div>
-          </SwiperSlide>{" "}
+          </SwiperSlide>
 
+          {/* ...keep/add more slides as needed ... */}
         </Swiper>
       </div>
     </div>

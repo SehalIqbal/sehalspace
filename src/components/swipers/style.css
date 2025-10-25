@@ -1,102 +1,120 @@
-@media (min-width: 1440px) {
-    .swiper-container {
-        margin-left: 200px !important;
-        overflow: visible !important;
-    }
-}
+/* ===========================
+   GLOBAL SWIPER STYLES
+=========================== */
 
-@media (min-width: 640px) {
-    .swiper-container {
-        margin-left: 120px;
-    }
-}
-
+/* Default Swiper container */
 .swiper-container {
-    margin-left: 100px !important;
+  overflow: visible !important;
+  margin-left: 0 !important;     /* ✅ Remove large left gap */
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 
+/* Make sure the first slide starts right below the "Latest Work" title */
+.homefu.fu-slider {
+  padding-left: 2rem;            /* Adjust this (1.5rem–3rem) to align perfectly with text */
+  padding-right: 2rem;
+  overflow: hidden;
+  width: 100%;
+  max-width: none !important;
+}
+
+/* Fix the slide visibility (was opacity: 0 before) */
 .swiper-slide-visible {
-    opacity: 0;
-    z-index: 10;
+  opacity: 1 !important;
+  z-index: 10;
 }
 
+/* For better image fit */
 .u-sizeFull {
-    background-position: 50% 50% !important;
-    background-origin: border-box !important;
-    background-size: cover !important;
-    width: 100%;
-    height: 100%;
-    display: block;
+  background-position: 50% 50% !important;
+  background-origin: border-box !important;
+  background-size: cover !important;
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
+/* Thumbnail sizing */
 .p-item-thumbnail-re3 {
-    width: 100%;
-    height: 350px;
+  width: 100%;
+  height: 350px;
 }
 
+/* ===========================
+   RESPONSIVE LAYOUTS
+=========================== */
+
+/* Small to medium screens */
 @media (min-width: 640px) {
-    .fu-slider {
-        padding-right: 120px;
-    }
-    .swiper-container {
-        margin-left: 120px;
-    }
-}
-
-@media (min-width: 1440px) {
-    .fu-slider {
-        width: 100%;
-        padding-right: 200px;
-        max-width: none !important;
-        overflow: hidden;
-    }
-    .swiper-container {
-        margin-left: 200px !important;
-        overflow: visible !important;
-    }
-}
-
-.swiper-container {
+  .fu-slider {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  .swiper-container {
+    margin-left: 0 !important;   /* no push on left */
     overflow: visible !important;
+  }
 }
 
-.fu-slider {
+/* Large screens */
+@media (min-width: 1024px) {
+  .fu-slider {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+/* Extra large screens (1440px and up) */
+@media (min-width: 1440px) {
+  .fu-slider {
+    width: 100%;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    max-width: none !important;
     overflow: hidden;
+  }
+
+  .swiper-container {
+    margin-left: 0 !important;   /* ✅ previously 200px — removed */
+    overflow: visible !important;
+  }
 }
 
+/* ===========================
+   SLIDER HEADER (Title area)
+=========================== */
 .sli3-underline-header {
-    display: block;
-    border-bottom: 1px solid var(--font-color);
-    margin-bottom: 15px;
-}
-
-.sli3-underline-header {
-    margin-bottom: 20px;
-    margin-right: 15px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--font-color);
+  margin-bottom: 20px;
+  margin-right: 15px;
 }
 
 .sli3-underline-header__arrows {
-    align-self: flex-end;
-    display: inline-flex;
-    flex-direction: row;
-    margin-bottom: 4px;
+  align-self: flex-end;
+  display: inline-flex;
+  flex-direction: row;
+  margin-bottom: 4px;
 }
 
 .sli3-underline-header__arrows svg {
-    width: 30px;
-    height: 30px;
+  width: 30px;
+  height: 30px;
 }
 
+/* ===========================
+   ANIMATIONS
+=========================== */
 .slideUp {
-    opacity: 0.6;
-    -webkit-transform: translateY(-100px);
-    transform: translateY(-100px);
-    transition: transform .5s ease-out;
+  opacity: 0.6;
+  transform: translateY(-100px);
+  transition: transform 0.5s ease-out;
 }
 
 .slideDown {
-    transition: transform .5s ease-out;
+  transition: transform 0.5s ease-out;
 }
