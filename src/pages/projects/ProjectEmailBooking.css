@@ -1,0 +1,138 @@
+.project-container {
+  padding: 60px 20px;
+}
+
+.title-section p {
+  color: #666;
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+.carousel-container {
+  position: relative;
+  text-align: center;
+  margin: 40px auto;
+  max-width: 900px;
+}
+
+.carousel-image {
+  width: 100%;
+  border-radius: 16px;
+  cursor: zoom-in;
+  transition: transform 0.3s ease;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  background: #0b0b0b;
+  color: white;
+  border: none;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  padding: 8px 12px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.carousel-btn.left { left: 15px; }
+.carousel-btn.right { right: 15px; }
+
+.carousel-btn:hover {
+  background: #22c55e;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.lightbox-img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 25px;
+  right: 40px;
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.content-section {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.text-img-row {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin: 60px 0;
+}
+
+.text-img-row.reverse {
+  flex-direction: row-reverse;
+}
+
+.text-img-row .text {
+  flex: 1;
+}
+
+.text-img-row .image {
+  flex: 1;
+  text-align: center;
+}
+
+.text-img-row img {
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.image-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.image-row img {
+  max-width: 45%;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.back-btn {
+  text-align: center;
+  margin-top: 60px;
+}
+
+/* 🌿 Responsive Tweaks */
+@media (max-width: 768px) {
+  .text-img-row {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .image-row img {
+    max-width: 90%;
+  }
+
+  .carousel-container {
+    margin: 20px 0;
+  }
+
+  .title-section p {
+    font-size: 0.95rem;
+  }
+}

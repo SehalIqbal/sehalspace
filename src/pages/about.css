@@ -1,0 +1,86 @@
+/* ============================
+   ABOUT PAGE STYLING (Sehal Iqbal)
+   ============================ */
+
+/* Page layout adjustments */
+.container {
+  max-width: 1200px;
+}
+
+.section-heading h3 {
+  font-weight: 700;
+  font-size: 1.9rem;
+  color: #0f0f0f;
+}
+
+.section-heading p {
+  color: #555;
+  font-size: 0.97rem;
+}
+
+/* Tag styling (the pill-style skills) */
+span {
+  border-color: rgba(0, 0, 0, 0.15);
+  transition: all 0.25s ease;
+}
+
+span:hover {
+  border-color: #22c55e;
+  color: #22c55e;
+  transform: translateY(-2px);
+}
+
+/* Card & image hover effect */
+.cardwithshadow {
+  border-radius: 14px;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+}
+
+.cardwithshadow:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(249, 7, 7, 0.08);
+}
+
+/* Hire Me button hover with accent */
+.btn-dark {
+  border: 1.5px solid transparent;
+  transition: all 0.25s ease-in-out;
+}
+
+.btn-dark:hover,
+.btn-dark:focus {
+  background-color: #000 !important;
+  color: #22c55e !important;
+  border-color: #22c55e !important;
+  transform: translateY(-1px);
+  box-shadow: 0 0 10px rgba(34, 197, 94, 0.4);
+}
+
+/* Education section */
+.mt-5 h5 {
+  color: #111;
+  font-weight: 600;
+}
+
+.text-muted {
+  color: #777 !important;
+}
+
+/* Make tags wrap cleanly */
+div > span {
+  display: inline-block;
+  margin-bottom: 6px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .section-heading {
+    text-align: center;
+  }
+
+  .btn-dark {
+    width: 100%;
+  }
+}

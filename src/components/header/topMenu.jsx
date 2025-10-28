@@ -2,46 +2,51 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-const TopMenuContainer = styled.div`
-  position: relative;
-  padding-left: 4vw;
-  padding-top: 0;
-  min-width: 50%;
-  padding-right: 4vw;
-  justify-content:center;
-
+const TopMenuContainer = styled.nav`
+  flex: 1;
+  display: flex;
+  justify-content: flex-start; /* 👈 shifts menu toward the left */
+  align-items: center;
+  gap: 2rem; /* space between links */
+  margin-left: 25vw; /* fine-tune horizontal offset */
 `;
+
 const NavLink = styled(Link)`
-  padding: 6px 0 12px 0;
   position: relative;
-  font-size: 14px;
-`;
+  font-size: 15px;
+  letter-spacing: 0.4px;
+  text-decoration: none;
+  color: var(--text-color, #f5f5f5);
+  font-weight: 500;
+  transition: color 0.25s ease, transform 0.25s ease;
 
-const ListItem = styled.li`
-  white-space: nowrap;
-  position: relative;
-  margin-top: 0, 375rem;
-  margin-left: 1rem;
-`;
+  &:hover {
+    color: #22c55e; /* your green accent */
+    transform: translateY(-1px);
+  }
 
+  /* underline animation */
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #22c55e;
+    transition: width 0.3s ease;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+`;
 
 export const TopMenu = () => {
-    return(
-        <TopMenuContainer className="w-100 d-none d-lg-flex">
-        <ul className="d-flex justify-content-end list-unstyled m-0">
-          <ListItem>
-            <NavLink to="/">Home</NavLink>
-          </ListItem>
-          <ListItem>
-            <NavLink to="about">About</NavLink>
-          </ListItem>
-          <ListItem>
-            <NavLink to="contact">Contact</NavLink>
-          </ListItem>
-          <ListItem>
-            <NavLink to="elements">Elements</NavLink>
-          </ListItem>
-        </ul>
-      </TopMenuContainer>
-    )
-}
+  return (
+    <TopMenuContainer>
+      <NavLink to="/">Home</NavLink>
+      <NavLink to="/about">About</NavLink>
+    </TopMenuContainer>
+  );
+};

@@ -1,9 +1,7 @@
 import React from "react";
 import { BasicLayout } from "../layouts/basicLayout";
 import myPhoto from "../assets/me.jpeg";
-
-// If you want to keep your existing <SkillsBox /> / <ExperiencesBox />,
-// you can still import and render them below the new sections.
+import "./about.css";
 
 const tag = (t) => (
   <span
@@ -26,74 +24,80 @@ export default function Skills() {
     <BasicLayout paddingTop>
       <div className="container">
         <div className="row align-items-start">
+          {/* LEFT SIDE */}
           <div className="col-lg-6">
             <div className="section-heading mb-4">
-              <h3 className="h3">Skills & Stack</h3>
-              <p className="mt-2" style={{ maxWidth: 640, lineHeight: 1.7 }}>
-                I design **automation-first** systems using n8n + OpenAI +
-                Google Workspace. The goal: ship fast, keep it simple, and
-                hand over something you can fully control—no lock-in, no fluff.
+              <h3 className="h3">Skills & Tech Stack</h3>
+              <p className="text-muted" style={{ maxWidth: 600, lineHeight: 1.7 }}>
+                I focus on building <strong>AI-driven automation systems</strong> — connecting APIs,
+                workflows, and cloud tools into reliable, human-friendly solutions that actually ship.
               </p>
             </div>
 
-           <div className="mb-4">
-            <h5 className="mb-2">Automation & Orchestration</h5>
-            <div>
-              {[
-                "n8n",
-                "Python Automation (APIs, scripts, schedulers)",
-                "Webhooks",
-                "Cron/Queues",
-              ].map(tag)}
+            {/* AUTOMATION */}
+            <div className="mb-4">
+              <h5 className="mb-2">Automation & Orchestration</h5>
+              <div>
+                {[
+                  "n8n",
+                  "Vapi",
+                  "Twilio",
+                  "Python Automation (scripts, schedulers)",
+                  "Webhooks",
+                  "Google Workspace",
+                  "Cron / Queues",
+                ].map(tag)}
+              </div>
             </div>
-          </div>
 
-
+            {/* AI */}
             <div className="mb-4">
               <h5 className="mb-2">AI & LLMs</h5>
               <div>
                 {[
                   "OpenAI API",
-                  "Prompt design",
-                  "Function calling",
+                  "Prompt Design",
+                  "Function Calling",
                   "Embeddings",
-                  "RAG (basic)",
+                  "RAG",
+                  "Pinecone (Vector Database)",
                 ].map(tag)}
               </div>
             </div>
 
+            {/* PROGRAMMING */}
             <div className="mb-4">
-              <h5 className="mb-2">Google Workspace</h5>
+              <h5 className="mb-2">Programming & Databases</h5>
               <div>
-                {[
-                  "Google Sheets",
-                  "Apps Script",
-                  "Gmail/Calendar/Drive APIs",
-                  "Apps Script Web Apps",
-                ].map(tag)}
+                {["Python", "Java", "C++", "SQL (MySQL / PostgreSQL)", "MongoDB"].map(tag)}
               </div>
             </div>
 
+            {/* WEB */}
             <div className="mb-4">
               <h5 className="mb-2">Web & Integrations</h5>
-              <div>
-                {[
-                  "Node.js",
-                  "React",
-                  "REST APIs",
-                  "Web scraping (lightweight)",
-                  "Stripe",
-                  "Twilio/WhatsApp",
-                ].map(tag)}
-              </div>
+              <div>{["React", "REST APIs"].map(tag)}</div>
             </div>
 
+            {/* DEPLOY */}
             <div className="mb-5">
               <h5 className="mb-2">Deploy & Ops</h5>
-              <div>{["Vercel", "Docker (basic)", "Supabase/Firebase"].map(tag)}</div>
+              <div>{["Vercel / Netlify", "Docker", "Git / GitHub"].map(tag)}</div>
+            </div>
+
+               {/* EDUCATION */}
+            <div className="mt-5">
+              <h5 className="mb-2">Education</h5>
+              <p className="mb-1">
+                <strong>BS Artificial Intelligence</strong> – FAST-NUCES, Karachi (2022–2026)
+              </p>
+              <p className="text-muted small mb-0">
+                Key Courses: Machine Learning, Deep Learning, Computer Vision, OOP, SQL, Data Structures
+              </p>
             </div>
           </div>
 
+          {/* RIGHT SIDE */}
           <div className="col-lg-6 col-xl-5 mx-auto pt-4 pt-lg-0 mb-5">
             <div className="card bg-transparent border-0 cardwithshadow minh100 onhoverup">
               <div
@@ -115,25 +119,9 @@ export default function Skills() {
                   Hire Me
                 </a>
               </div>
-
-              {/* Optional: a brief “what I do” card */}
-              <div className="mt-2" style={{ lineHeight: 1.6 }}>
-                <strong>What I typically build</strong>
-                <ul className="mt-2 mb-0">
-                  <li>AI-assisted email inbox + smart triage</li>
-                  <li>Booking & follow-up automations</li>
-                  <li>Sheet-driven mini-CRMs and reporting</li>
-                </ul>
-              </div>
             </div>
           </div>
         </div>
-
-        {/* If you still want to keep your custom boxes, uncomment: */}
-        {/* <div className="row mt-4">
-          <div className="col-lg-6"><SkillsBox /></div>
-          <div className="col-lg-6"><ExperiencesBox /></div>
-        </div> */}
       </div>
     </BasicLayout>
   );

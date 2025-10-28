@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import { HeaderTop } from "../components";
 import Home from "../pages/home";
-import Elements from "../pages/themeElement";
-import Services from "../components/sections/services";
-import Skills from "../pages/about";
-import Contactme from "../pages/contactme";
-import Contact from "../pages/contact";
+import About from "../pages/about";
+import ProjectEmailBooking from "../pages/projects/ProjectEmailBooking";
+
+<Route path="/projects/email-booking" element={<ProjectEmailBooking />} />
+
 import { useLocation, BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.scss";
 
@@ -27,12 +27,9 @@ const App = () => {
         <HeaderTop logotext="SEHAL IQBAL" />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/elements" element={<Elements />} />
-          <Route path="/about" element={<Skills />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/contactme" element={<Contactme />} />
+          <Route path="/about" element={<About />} />
           <Route path="*" element={<Home />} />
+          <Route path="/projects/email-booking" element={<ProjectEmailBooking />} />
         </Routes>
       </div>
     </BrowserRouter>

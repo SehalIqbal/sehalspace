@@ -1,9 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Logo } from "./logo";
-import { CenterdMenu } from "../menus/CenterdMenu";
-import { ThemeSwitcher1 } from "./themeSwitcher1";
-import { MenuButton } from "./menuButton";
 import { TopMenu } from "./topMenu";
 
 const Header = styled.header`
@@ -16,41 +13,25 @@ const Header = styled.header`
   justify-content: space-between;
   z-index: 101;
   background-color: var(--bg-color);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   transition: background-color 300ms linear, transform 0.4s cubic-bezier(0, 0, 0.58, 1);
 
-  ${({ $scrolled }) => $scrolled && "transform: translateY(-100px); opacity: 0.6;"};
-
-  @media screen and (max-width: 992px) {
-    min-height: 60px;
-    height: 60px;
-    ${({ $scrolled }) => $scrolled && "transform: translateY(-60px);"};
-  }
+  ${({ $scrolled }) => $scrolled && "opacity: 0.95; backdrop-filter: blur(6px);"};
+  
+  min-height: 70px;
+  padding: 0 2rem;
 
   @media screen and (min-width: 992px) {
-    min-height: 100px;
-    height: 100px;
+    min-height: 90px;
   }
-
-  ${({ $menuOpen }) => $menuOpen && "transform: translateY(0) !important; opacity: 1;"};
 `;
 
 export const HeaderTop = ({ logotext, theme }) => {
-  const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  const toggleMenu = () => setMenuOpen(prev => !prev);
-
   useEffect(() => {
-    let lastScroll = 0;
-
     const handleScroll = () => {
-      const currentScroll = window.scrollY;
-      if (currentScroll > 100 && currentScroll > lastScroll) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-      lastScroll = currentScroll;
+      setScrolled(window.scrollY > 100);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -58,14 +39,9 @@ export const HeaderTop = ({ logotext, theme }) => {
   }, []);
 
   return (
-    <>
-      <Header $scrolled={scrolled} $menuOpen={menuOpen}>
-        <Logo logotext={logotext} />
-        <TopMenu />
-        <MenuButton func={toggleMenu} isActive={menuOpen} />
-      </Header>
-      <CenterdMenu isActive={menuOpen} set={toggleMenu} />
-      <ThemeSwitcher1 theme={theme} />
-    </>
+    <Header $scrolled={scrolled}>
+      <Logo logotext={logotext} />
+      <TopMenu />
+    </Header>
   );
 };

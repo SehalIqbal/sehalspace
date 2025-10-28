@@ -1,120 +1,69 @@
-/* ===========================
-   GLOBAL SWIPER STYLES
-=========================== */
-
-/* Default Swiper container */
-.swiper-container {
-  overflow: visible !important;
-  margin-left: 0 !important;     /* ✅ Remove large left gap */
-  margin-right: 0 !important;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
+.projects-section {
+  margin-bottom: 160px;
+  padding: 0 2rem;
 }
 
-/* Make sure the first slide starts right below the "Latest Work" title */
-.homefu.fu-slider {
-  padding-left: 2rem;            /* Adjust this (1.5rem–3rem) to align perfectly with text */
-  padding-right: 2rem;
-  overflow: hidden;
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/* Allow shadow to show outside */
+.project-card {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: none;
+  background: transparent;
+  border-radius: 14px;
+  overflow: visible;              /* ← was hidden: must be visible */
+  transition: transform 0.3s ease;
+}
+
+.project-image {
   width: 100%;
-  max-width: none !important;
+  aspect-ratio: 16 / 9;
+  /* No clipping here either */
+  overflow: visible;              /* ← allow glow to render outside */
+  border-radius: 14px;            /* purely for layout */
+  position: relative;
 }
 
-/* Fix the slide visibility (was opacity: 0 before) */
-.swiper-slide-visible {
-  opacity: 1 !important;
-  z-index: 10;
-}
-
-/* For better image fit */
-.u-sizeFull {
-  background-position: 50% 50% !important;
-  background-origin: border-box !important;
-  background-size: cover !important;
+/* Put the rounding on the IMG itself */
+.project-image img {
   width: 100%;
   height: 100%;
   display: block;
+  object-fit: cover;
+  border-radius: 14px;            /* ← round the image */
+   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Thumbnail sizing */
-.p-item-thumbnail-re3 {
-  width: 100%;
-  height: 350px;
+/* GREEN GLOW on hover */
+.project-card:hover .project-image img {
+  transform: scale(1.01);
+  box-shadow: 0 0 8px 2px rgba(34, 197, 94, 0.35) !important; /* soft subtle green glow */
+  z-index: 2;
 }
 
-/* ===========================
-   RESPONSIVE LAYOUTS
-=========================== */
 
-/* Small to medium screens */
-@media (min-width: 640px) {
-  .fu-slider {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-  .swiper-container {
-    margin-left: 0 !important;   /* no push on left */
-    overflow: visible !important;
-  }
+
+/* Remove any old shadows that might override */
+.cardwithshadow,
+.onhoverup {
+  box-shadow: none !important;
 }
 
-/* Large screens */
-@media (min-width: 1024px) {
-  .fu-slider {
-    padding-left: 3rem;
-    padding-right: 3rem;
-  }
-}
 
-/* Extra large screens (1440px and up) */
-@media (min-width: 1440px) {
-  .fu-slider {
-    width: 100%;
-    padding-left: 4rem;
-    padding-right: 4rem;
-    max-width: none !important;
-    overflow: hidden;
-  }
 
-  .swiper-container {
-    margin-left: 0 !important;   /* ✅ previously 200px — removed */
-    overflow: visible !important;
-  }
-}
-
-/* ===========================
-   SLIDER HEADER (Title area)
-=========================== */
-.sli3-underline-header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  border-bottom: 1px solid var(--font-color);
-  margin-bottom: 20px;
-  margin-right: 15px;
-}
-
-.sli3-underline-header__arrows {
-  align-self: flex-end;
-  display: inline-flex;
-  flex-direction: row;
-  margin-bottom: 4px;
-}
-
-.sli3-underline-header__arrows svg {
-  width: 30px;
-  height: 30px;
-}
-
-/* ===========================
-   ANIMATIONS
-=========================== */
-.slideUp {
-  opacity: 0.6;
-  transform: translateY(-100px);
-  transition: transform 0.5s ease-out;
-}
-
-.slideDown {
-  transition: transform 0.5s ease-out;
+/* Title below */
+.project-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 12px;
+  text-align: center;
+  color: var(--font-color, #fff);
 }
