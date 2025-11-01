@@ -27,7 +27,7 @@ export default function ProjectLinkedInPoster() {
             A fully automated LinkedIn posting system built with <strong>n8n</strong>,
             <strong> OpenAI</strong>, and <strong>Google Sheets</strong>. You draft a title in a sheet,
             the workflow generates a well-formatted post (hook, body, CTA, hashtags), and then publishes it
-            to the LinkedIn profile Once posted, the sheet
+            to the LinkedIn profile. Once posted, the sheet
             updates the status so the same item isn’t processed twice.
           </p>
         </div>
