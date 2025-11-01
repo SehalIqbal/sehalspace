@@ -1,15 +1,37 @@
+/* ==============
+   PROJECTS SECTION
+   ============== */
 .projects-section {
-  margin-bottom: 160px;
+  max-width: 1200px;
+  margin: 0 auto 120px;
   padding: 0 2rem;
 }
 
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
+.projects-section h3 {
+  font-weight: 700;
+  margin-bottom: 2rem;
+  font-size: 1.6rem;
 }
 
-/* Allow shadow to show outside */
+/* ==============
+   GRID LAYOUT
+   ============== */
+.projects-grid {
+  display: grid;
+  gap: 2.5rem;
+  grid-template-columns: 1fr;
+  justify-items: stretch;
+}
+
+@media (min-width: 900px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ==============
+   CARD DESIGN
+   ============== */
 .project-card {
   text-decoration: none;
   color: inherit;
@@ -19,51 +41,52 @@
   border: none;
   background: transparent;
   border-radius: 14px;
-  overflow: visible;              /* ← was hidden: must be visible */
-  transition: transform 0.3s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  width: 100%;
+  text-align: center;
 }
 
+/* ==============
+   TITLE ABOVE IMAGE
+   ============== */
+/* Title above image — always visible */
+.project-title {
+  margin: 0 0 10px 0;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--font-color, #111); /* visible on light bg */
+  letter-spacing: 0.3px;
+  text-align: left;
+}
+
+/* Optional: subtle color shift on hover */
+.project-card:hover .project-title {
+  color: #22c55e;
+}
+
+
+/* ==============
+   IMAGE STYLING
+   ============== */
 .project-image {
   width: 100%;
   aspect-ratio: 16 / 9;
-  /* No clipping here either */
-  overflow: visible;              /* ← allow glow to render outside */
-  border-radius: 14px;            /* purely for layout */
+  overflow: hidden;
+  border-radius: 14px;
   position: relative;
 }
 
-/* Put the rounding on the IMG itself */
 .project-image img {
   width: 100%;
   height: 100%;
-  display: block;
   object-fit: cover;
-  border-radius: 14px;            /* ← round the image */
-   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  object-position: center;
+  border-radius: 14px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* GREEN GLOW on hover */
+/* Subtle green glow on hover */
 .project-card:hover .project-image img {
-  transform: scale(1.01);
-  box-shadow: 0 0 8px 2px rgba(34, 197, 94, 0.35) !important; /* soft subtle green glow */
-  z-index: 2;
-}
-
-
-
-/* Remove any old shadows that might override */
-.cardwithshadow,
-.onhoverup {
-  box-shadow: none !important;
-}
-
-
-
-/* Title below */
-.project-title {
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-top: 12px;
-  text-align: center;
-  color: var(--font-color, #fff);
+  transform: scale(1.02);
+  box-shadow: 0 0 10px rgba(34, 197, 94, 0.35);
 }

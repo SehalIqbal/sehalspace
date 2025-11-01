@@ -111,14 +111,7 @@ export default function Skills() {
                 />
               </div>
 
-              <div className="text-center my-3">
-                <a
-                  href="mailto:sehaliqbal27@gmail.com"
-                  className="btn btn-dark px-4 py-2"
-                >
-                  Hire Me
-                </a>
-              </div>
+              
             </div>
           </div>
         </div>
