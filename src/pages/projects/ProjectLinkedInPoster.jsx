@@ -5,8 +5,6 @@ import { FiChevronLeft, FiChevronRight, FiX } from "react-icons/fi";
 
 const gallery = [
   "/projects/linkedin_workflow.png", // n8n workflow
-  "/projects/linkedin_post.png",     // LinkedIn post on individual profile
-  "/projects/linkedin_sheet.png",    // Google Sheets source/control
 ];
 
 export default function ProjectLinkedInPoster() {
@@ -29,7 +27,7 @@ export default function ProjectLinkedInPoster() {
             A fully automated LinkedIn posting system built with <strong>n8n</strong>,
             <strong> OpenAI</strong>, and <strong>Google Sheets</strong>. You draft a title in a sheet,
             the workflow generates a well-formatted post (hook, body, CTA, hashtags), and then publishes it
-            to a personal LinkedIn profile (and optionally loops through group IDs). Once posted, the sheet
+            to the LinkedIn profile Once posted, the sheet
             updates the status so the same item isn’t processed twice.
           </p>
         </div>
@@ -134,45 +132,18 @@ export default function ProjectLinkedInPoster() {
           <div className="col-md-6">
             <h5>Controlled from Google Sheets</h5>
             <p className="text-muted" style={{ lineHeight: 1.8 }}>
-              Draft titles and manage status in a simple sheet. The workflow only picks rows with{" "}
+              Draft titles and manage status in a simple sheet. The workflow picks rows with{" "}
               <strong>Pending</strong>, posts them, and writes back <strong>Posted</strong> to prevent
               duplicates. You can also store group IDs here to loop through communities.
             </p>
           </div>
           <div className="col-md-6 text-center">
             <img
-              src="/projects/linkedin_sheet.png"
+              src="/projects/google_sheets_linkedin.png"
               alt="Google Sheets source"
               className="img-fluid rounded shadow-sm"
               style={{ maxWidth: "95%" }}
             />
-          </div>
-        </div>
-
-        {/* ===== What’s inside (tech) ===== */}
-        <div style={{ maxWidth: 900, margin: "0 auto" }}>
-          <h5 className="mt-4">Tech used</h5>
-          <div className="d-flex flex-wrap" style={{ gap: "8px 10px" }}>
-            {[
-              "n8n",
-              "OpenAI (post generator)",
-              "LinkedIn API (UGC posts)",
-              "Google Sheets (trigger + status)",
-              "HTTP Request + OAuth",
-            ].map((t) => (
-              <span
-                key={t}
-                style={{
-                  border: "1px solid rgba(255,255,255,0.15)",
-                  padding: "6px 10px",
-                  borderRadius: "999px",
-                  fontSize: "0.9rem",
-                  opacity: 0.9,
-                }}
-              >
-                {t}
-              </span>
-            ))}
           </div>
         </div>
 
